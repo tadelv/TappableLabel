@@ -8,7 +8,18 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+Using TappableLabel should be quite intuitive. All you need to do, is `import TappableLabel`, and all your UILabel objects will gain automatic link detection.
+
+Here is an example:
+```swift
+import TappableLabel
+
+let myLabel = UILabel()
+// set up the label using NSAttributedString
+myLabel.addLinkDetection { url in
+  UIApplication.shared.open(url)
+}
+```
 
 ## Installation
 
