@@ -1,6 +1,5 @@
 # TappableLabel
 
-[![CI Status](https://img.shields.io/travis/tadelv/TappableLabel.svg?style=flat)](https://travis-ci.org/tadelv/TappableLabel)
 [![Version](https://img.shields.io/cocoapods/v/TappableLabel.svg?style=flat)](https://cocoapods.org/pods/TappableLabel)
 [![License](https://img.shields.io/cocoapods/l/TappableLabel.svg?style=flat)](https://cocoapods.org/pods/TappableLabel)
 [![Platform](https://img.shields.io/cocoapods/p/TappableLabel.svg?style=flat)](https://cocoapods.org/pods/TappableLabel)
@@ -22,7 +21,7 @@ pod 'TappableLabel'
 
 ## Author
 
-tadelv, tadelv@gmail.com
+Vid Tadel
 
 ## License
 

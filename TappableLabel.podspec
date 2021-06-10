@@ -9,34 +9,22 @@
 Pod::Spec.new do |s|
   s.name             = 'TappableLabel'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TappableLabel.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'Add links detection on UILabel, no subclasses.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+TappableLabel is an extension on UILabel, which adds link detection.CocoaPods
+In order to use it, just `import TappableLabel` and then use `label.addLinkDetection { url in ... }` in your code.
+There are no subclasses to substitue your UILabels with, it works with existing labels automagically.
                        DESC
 
   s.homepage         = 'https://github.com/tadelv/TappableLabel'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'tadelv' => 'tadelv@gmail.com' }
+  s.author           = { 'tadelv' => 'vid@tadel.net' }
   s.source           = { :git => 'https://github.com/tadelv/TappableLabel.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.swift_version    = '5.3'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '12.1'
 
   s.source_files = 'TappableLabel/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'TappableLabel' => ['TappableLabel/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
