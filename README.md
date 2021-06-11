@@ -21,6 +21,9 @@ myLabel.addLinkDetection { url in
 }
 ```
 
+It's especially useful, if you are building your AttributedString from html, as the links will be added automatically.
+For more information, check the example project.
+
 ## Installation
 
 TappableLabel is available through [CocoaPods](https://cocoapods.org). To install

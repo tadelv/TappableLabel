@@ -9,16 +9,16 @@ import ObjectiveC
 import UIKit
 
 public extension UILabel {
-  private enum CallbackPropertyKey {
+  private enum PropertyKey {
     static var callback: Int = 0
   }
 
   private var detectionCallback: ((URL) -> Void)? {
     get {
-      objc_getAssociatedObject(self, &CallbackPropertyKey.callback) as? ((URL) -> Void)
+      objc_getAssociatedObject(self, &PropertyKey.callback) as? ((URL) -> Void)
     }
     set {
-      objc_setAssociatedObject(self, &CallbackPropertyKey.callback, newValue, .OBJC_ASSOCIATION_COPY)
+      objc_setAssociatedObject(self, &PropertyKey.callback, newValue, .OBJC_ASSOCIATION_COPY)
     }
   }
 
@@ -37,9 +37,13 @@ public extension UILabel {
 
   // thanks to https://stackoverflow.com/a/35789589/405770
   private func checkForLink(_ gestureRecognizer: UITapGestureRecognizer) -> URL? {
+    guard let attributedText = attributedText else {
+      return nil
+    }
+
     let layoutManager = NSLayoutManager()
     let textContainer = NSTextContainer(size: CGSize.zero)
-    let textStorage = NSTextStorage(attributedString: attributedText!)
+    let textStorage = NSTextStorage(attributedString: attributedText)
 
     // Configure textContainer
     textContainer.lineFragmentPadding = 0.0
@@ -70,6 +74,6 @@ public extension UILabel {
     }
 
     let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInTextContainer, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-    return attributedText?.attribute(.link, at: indexOfCharacter, effectiveRange: nil) as? URL
+    return attributedText.attribute(.link, at: indexOfCharacter, effectiveRange: nil) as? URL
   }
 }
